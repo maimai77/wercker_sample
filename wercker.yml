@@ -11,7 +11,7 @@ services:
       env:
         MYSQL_ROOT_PASSWORD: password
         MYSQL_USER: root
-        MYSQL_PASSWORD: password
+        MYSQL_PASSWORD:
         MYSQL_DATABASE: wercker_sample_test
     # - postgres
     # http://devcenter.wercker.com/docs/services/postgresql.html
@@ -32,12 +32,11 @@ build:
             code: ruby -v
         - script:
             name: mysql service
-            code: echo $MYSLQ_ENV_MYSQL_USER $MYSQL_ENV_MYSQL_PASSWORD $MYSQL_ENV_MYSQL_DATABASE
+            code: echo $MYSQL_ENV_MYSQL_USER $MYSQL_ENV_MYSQL_PASSWORD $MYSQL_ENV_MYSQL_DATABASE
         - script:
             name: bundle config for nokogiri
             code: bundle config build.nokogiri --use-system-libraries
         - bundle-install
-        - rails-database-yml
         - script:
             name: setup database
             code: bin/rake db:schema:load RAILS_ENV=test
