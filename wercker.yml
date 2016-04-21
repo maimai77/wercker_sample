@@ -31,6 +31,9 @@ build:
             name: ruby version
             code: ruby -v
         - script:
+            name: mysql service
+            code: ps aux | grep mysql
+        - script:
             name: bundle config for nokogiri
             code: bundle config build.nokogiri --use-system-libraries
         - bundle-install
