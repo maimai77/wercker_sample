@@ -9,9 +9,9 @@ box: ruby:2.2.3
 services:
     - id: mysql:5.6
       env:
-        MYSQL_ROOT_PASSWORD: ''
+        MYSQL_ROOT_PASSWORD: password
         MYSQL_USER: root
-        MYSQL_PASSWORD: ''
+        MYSQL_PASSWORD: password
         MYSQL_DATABASE: wercker_sample_test
     # - postgres
     # http://devcenter.wercker.com/docs/services/postgresql.html
