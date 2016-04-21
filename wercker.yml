@@ -36,5 +36,8 @@ build:
         - bundle-install
         - rails-database-yml
         - script:
+            name: setup database
+            code: bin/rake db:setup RAILS_ENV=test
+        - script:
             name: rspec
             code: bundle exec rspec
