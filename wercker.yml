@@ -29,7 +29,7 @@ build:
             code: bundle config build.nokogiri --use-system-libraries
         - bundle-install
         - rails-database-yml:
-            service: mariadb
+            service: mysql
         - script:
             name: setup database
             code: bin/rake db:schema:load RAILS_ENV=test
