@@ -6,7 +6,8 @@
 box: ruby:2.2.3
 # You can also use services such as databases. Read more on our dev center:
 # http://devcenter.wercker.com/docs/services/index.html
-# services:
+services:
+    - mysql:5.6
     # - postgres
     # http://devcenter.wercker.com/docs/services/postgresql.html
 
